@@ -1,0 +1,42 @@
+.tabs-list {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid #e5e5e5;
+  margin-bottom: 1.5rem;
+}
+
+.tabs-tab {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+
+.tabs-tab[aria-selected='true'] {
+  color: var(--link-color, #1473e6);
+  border-bottom-color: var(--link-color, #1473e6);
+}
+
+.tabs-tab:focus-visible {
+  outline: 2px solid var(--link-color, #1473e6);
+  outline-offset: 2px;
+}
+
+.tabs-panel[hidden] {
+  display: none;
+}
+
+.tabs-panel {
+  animation: tabs-fade-in 0.15s ease-in;
+}
+
+@keyframes tabs-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
